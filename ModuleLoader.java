@@ -20,7 +20,7 @@ public class ModuleLoader implements Runnable{
             Thread.sleep(1000*tempo);
             System.out.println("[OK] " + "Módulo " + modulo + " carregado");
             latch.countDown();
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             System.err.println("[ERRO] Falha no carregamento do módulo " + modulo);
             Thread.currentThread().interrupt();
         }
